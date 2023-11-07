@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4608" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -65,6 +65,14 @@
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="otE-L3-3rY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1F-nM-DbY">
+                                <rect key="frame" x="171.5" y="520" width="71" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Google"/>
+                                <connections>
+                                    <action selector="iniciarSesionGoogleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hlO-H9-NAo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,15 +83,18 @@
                             <constraint firstItem="TNK-o6-giu" firstAttribute="top" secondItem="Dnr-dn-roA" secondAttribute="bottom" constant="25" id="MtC-SS-W2D"/>
                             <constraint firstItem="u1I-nd-xQb" firstAttribute="top" secondItem="fv2-1P-BCx" secondAttribute="bottom" constant="25" id="RRl-VQ-45v"/>
                             <constraint firstItem="TNK-o6-giu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ahD-Xc-LUR"/>
+                            <constraint firstItem="S1F-nM-DbY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ddd-lT-Nt2"/>
                             <constraint firstItem="sr1-lN-3By" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gDG-eN-Fyt"/>
                             <constraint firstItem="DcJ-PU-lYs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mfS-OA-nrd"/>
                             <constraint firstItem="sr1-lN-3By" firstAttribute="top" secondItem="TNK-o6-giu" secondAttribute="bottom" constant="25" id="mj1-bq-NsD"/>
                             <constraint firstItem="u1I-nd-xQb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p7K-7C-Dt7"/>
                             <constraint firstItem="fv2-1P-BCx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLb-v2-it5"/>
+                            <constraint firstItem="S1F-nM-DbY" firstAttribute="top" secondItem="DcJ-PU-lYs" secondAttribute="bottom" constant="25" id="wht-bK-L0r"/>
                             <constraint firstItem="Dnr-dn-roA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yfR-Eh-5r8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="botonGoogle" destination="S1F-nM-DbY" id="7FJ-a9-Rpt"/>
                         <outlet property="emailTextField" destination="Dnr-dn-roA" id="cVP-ai-pyc"/>
                         <outlet property="passwordTextField" destination="sr1-lN-3By" id="X9a-gK-cWI"/>
                     </connections>
