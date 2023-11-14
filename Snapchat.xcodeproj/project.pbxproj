@@ -20,6 +20,12 @@
 		9F14EDC22AFAEE2900F9F746 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9F14EDC12AFAEE2900F9F746 /* GoogleSignIn */; };
 		9F14EDC42AFAEE2900F9F746 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9F14EDC32AFAEE2900F9F746 /* GoogleSignInSwift */; };
 		9F14EDC62AFAEEE100F9F746 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F14EDC52AFAEEE100F9F746 /* GoogleService-Info.plist */; };
+		9FFF16412B04178000C3B956 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF16402B04178000C3B956 /* SnapsViewController.swift */; };
+		9FFF16472B041CEA00C3B956 /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */; };
+		9FFF164A2B04219300C3B956 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9FFF16492B04219300C3B956 /* FirebaseDatabase */; };
+		9FFF164C2B04219A00C3B956 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9FFF164B2B04219A00C3B956 /* FirebaseStorage */; };
+		9FFF164E2B042C1200C3B956 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF164D2B042C1200C3B956 /* ElegirUsuarioViewController.swift */; };
+		9FFF16522B0430E900C3B956 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF16512B0430E900C3B956 /* Usuario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,10 @@
 		9F14EDAF2AFADA0900F9F746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F14EDB12AFADA0900F9F746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F14EDC52AFAEEE100F9F746 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FFF16402B04178000C3B956 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
+		9FFF164D2B042C1200C3B956 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
+		9FFF16512B0430E900C3B956 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,9 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFF164A2B04219300C3B956 /* FirebaseDatabase in Frameworks */,
 				9F14EDC42AFAEE2900F9F746 /* GoogleSignInSwift in Frameworks */,
 				9F14EDBB2AFADF0900F9F746 /* FirebaseAnalytics in Frameworks */,
 				9F14EDC22AFAEE2900F9F746 /* GoogleSignIn in Frameworks */,
+				9FFF164C2B04219A00C3B956 /* FirebaseStorage in Frameworks */,
 				9F14EDBF2AFADF0900F9F746 /* FirebaseAuth in Frameworks */,
 				9F14EDBD2AFADF0900F9F746 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
@@ -56,6 +68,7 @@
 			children = (
 				9F14ED9F2AFADA0800F9F746 /* Snapchat */,
 				9F14ED9E2AFADA0800F9F746 /* Products */,
+				9FFF16482B04219300C3B956 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,10 +83,11 @@
 		9F14ED9F2AFADA0800F9F746 /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				9FFF16502B0430CD00C3B956 /* Modelos */,
+				9FFF164F2B04309D00C3B956 /* ViewControllers */,
 				9F14EDC52AFAEEE100F9F746 /* GoogleService-Info.plist */,
 				9F14EDA02AFADA0800F9F746 /* AppDelegate.swift */,
 				9F14EDA22AFADA0800F9F746 /* SceneDelegate.swift */,
-				9F14EDA42AFADA0800F9F746 /* iniciarSesionViewController.swift */,
 				9F14EDA62AFADA0800F9F746 /* Main.storyboard */,
 				9F14EDAC2AFADA0900F9F746 /* Assets.xcassets */,
 				9F14EDAE2AFADA0900F9F746 /* LaunchScreen.storyboard */,
@@ -81,6 +95,32 @@
 				9F14EDA92AFADA0800F9F746 /* Snapchat.xcdatamodeld */,
 			);
 			path = Snapchat;
+			sourceTree = "<group>";
+		};
+		9FFF16482B04219300C3B956 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FFF164F2B04309D00C3B956 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F14EDA42AFADA0800F9F746 /* iniciarSesionViewController.swift */,
+				9FFF164D2B042C1200C3B956 /* ElegirUsuarioViewController.swift */,
+				9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */,
+				9FFF16402B04178000C3B956 /* SnapsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9FFF16502B0430CD00C3B956 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				9FFF16512B0430E900C3B956 /* Usuario.swift */,
+			);
+			path = Modelos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +145,8 @@
 				9F14EDBE2AFADF0900F9F746 /* FirebaseAuth */,
 				9F14EDC12AFAEE2900F9F746 /* GoogleSignIn */,
 				9F14EDC32AFAEE2900F9F746 /* GoogleSignInSwift */,
+				9FFF16492B04219300C3B956 /* FirebaseDatabase */,
+				9FFF164B2B04219A00C3B956 /* FirebaseStorage */,
 			);
 			productName = Snapchat;
 			productReference = 9F14ED9D2AFADA0800F9F746 /* Snapchat.app */;
@@ -166,8 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFF16522B0430E900C3B956 /* Usuario.swift in Sources */,
+				9FFF164E2B042C1200C3B956 /* ElegirUsuarioViewController.swift in Sources */,
+				9FFF16412B04178000C3B956 /* SnapsViewController.swift in Sources */,
 				9F14EDA52AFADA0800F9F746 /* iniciarSesionViewController.swift in Sources */,
 				9F14EDA12AFADA0800F9F746 /* AppDelegate.swift in Sources */,
+				9FFF16472B041CEA00C3B956 /* ImagenViewController.swift in Sources */,
 				9F14EDA32AFADA0800F9F746 /* SceneDelegate.swift in Sources */,
 				9F14EDAB2AFADA0800F9F746 /* Snapchat.xcdatamodeld in Sources */,
 			);
@@ -432,6 +478,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F14EDC02AFAEE2900F9F746 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		9FFF16492B04219300C3B956 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F14EDB92AFADF0900F9F746 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		9FFF164B2B04219A00C3B956 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F14EDB92AFADF0900F9F746 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 
