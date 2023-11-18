@@ -19,57 +19,24 @@ class iniciarSesionViewController: UIViewController {
     
     @IBOutlet weak var botonGoogle: UIButton!
     @IBAction func iniciarSesionTapped(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextField.text!,password: passwordTextField.text!){ (user,error) in print("Intentado Iniciar sesion")
-            if error != nil{
-                print("Se presento el siguiente error: \(error)")
-                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!,completion: {(user,error) in print("Intentando creaar usuario")
-                if error != nil{
-                    print("Se presento el siguiente error al crear usuario:\(error)")
-                }else{
-                    print("El usuario fue creado exitosamente.")
-                    Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
-                    let alerta = UIAlertController(title: "Creacion de usuario", message: "Usuario: \(self.emailTextField.text!) se creo correctamente.", preferredStyle: .alert)
-                    let btnOk = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in
-                        self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
-                    })
-                    alerta.addAction(btnOk)
-                    self.present(alerta, animated: true,completion: nil)
-                }
-                })
-            }else{
-                print("Inicio de sesion exitoso")
-                self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
-            }
-        }
-    }
-    @IBAction func iniciarSesionGoogleTapped(_ sender: Any) {
-        // Configura Google Sign-In
-                guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-                let config = GIDConfiguration(clientID: clientID)
-                GIDSignIn.sharedInstance.configuration = config
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+                if let error = error as NSError? {
+                    print("Error al intentar iniciar sesión: \(error.localizedDescription)")
 
-                // Inicia el flujo de inicio de sesión con Google
-                GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
-                    if let error = error {
-                        print("Error al iniciar sesión con Google: \(error.localizedDescription)")
-                    } else if let user = result?.user,
-                              let idToken = user.idToken?.tokenString {
-                        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
-
-                        // Inicia sesión en Firebase con las credenciales de Google
-                        Auth.auth().signIn(with: credential) { _, firebaseError in
-                            if let firebaseError = firebaseError {
-                                print("Error al iniciar sesión en Firebase: \(firebaseError.localizedDescription)")
-                            } else {
-                                print("Inicio de sesión en Firebase exitoso")
-                                // Realiza cualquier acción adicional que necesites después del inicio de sesión.
-                            }
-                        }
+                    if error.code == AuthErrorCode.userNotFound.rawValue {
+                        // El usuario no existe, muestra la alerta para crear uno nuevo
+                        print("...")
+                    } else {
+                        // Otro tipo de error, muestra la alerta de error
+                        self.mostrarAlertaError("Error de Inicio de Sesión", mensaje: error.localizedDescription)
                     }
+                } else {
+                    // Inicio de sesión exitoso
+                    print("Inicio de sesión exitoso")
+                    self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
                 }
-        
-       
-        
+            }
+
     }
     
     override func viewDidLoad() {
@@ -77,7 +44,31 @@ class iniciarSesionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func iniciarSesion() {
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+                if let error = error as NSError? {
+                    print("Error al intentar iniciar sesión: \(error.localizedDescription)")
+                    self.mostrarAlertaError("Error de Inicio de Sesión", mensaje: error.localizedDescription)
+                } else {
+                    // Inicio de sesión exitoso
+                    print("Inicio de sesión exitoso")
+                    self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
+                }
+            }
+        }
+        
+    func mostrarAlertaError(_ titulo: String, mensaje: String) {
+        let alerta = UIAlertController(title: "Usuario no Existente", message: "El usuario no existe. ¿Desea crear uno nuevo?", preferredStyle: .alert)
+        let btnCrear = UIAlertAction(title: "Crear", style: .default) { (_) in
+            // Redirige a la vista para crear un nuevo usuario
+            self.performSegue(withIdentifier: "segueCrearUsuario", sender: nil)
+        }
+        let btnCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alerta.addAction(btnCrear)
+        alerta.addAction(btnCancelar)
+        present(alerta, animated: true, completion: nil)
+    }
 
-
+    
 }
 

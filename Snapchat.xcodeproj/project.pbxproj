@@ -20,6 +20,8 @@
 		9F14EDC22AFAEE2900F9F746 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 9F14EDC12AFAEE2900F9F746 /* GoogleSignIn */; };
 		9F14EDC42AFAEE2900F9F746 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9F14EDC32AFAEE2900F9F746 /* GoogleSignInSwift */; };
 		9F14EDC62AFAEEE100F9F746 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F14EDC52AFAEEE100F9F746 /* GoogleService-Info.plist */; };
+		9FFEA5E72B0900DD003C6420 /* crearUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEA5E62B0900DD003C6420 /* crearUsuarioViewController.swift */; };
+		9FFEA5E92B093915003C6420 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFEA5E82B093915003C6420 /* Snap.swift */; };
 		9FFF16412B04178000C3B956 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF16402B04178000C3B956 /* SnapsViewController.swift */; };
 		9FFF16472B041CEA00C3B956 /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */; };
 		9FFF164A2B04219300C3B956 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9FFF16492B04219300C3B956 /* FirebaseDatabase */; };
@@ -39,6 +41,8 @@
 		9F14EDAF2AFADA0900F9F746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F14EDB12AFADA0900F9F746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F14EDC52AFAEEE100F9F746 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FFEA5E62B0900DD003C6420 /* crearUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crearUsuarioViewController.swift; sourceTree = "<group>"; };
+		9FFEA5E82B093915003C6420 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		9FFF16402B04178000C3B956 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
 		9FFF164D2B042C1200C3B956 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				9F14EDA42AFADA0800F9F746 /* iniciarSesionViewController.swift */,
 				9FFF164D2B042C1200C3B956 /* ElegirUsuarioViewController.swift */,
+				9FFEA5E62B0900DD003C6420 /* crearUsuarioViewController.swift */,
 				9FFF16462B041CEA00C3B956 /* ImagenViewController.swift */,
 				9FFF16402B04178000C3B956 /* SnapsViewController.swift */,
 			);
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9FFF16512B0430E900C3B956 /* Usuario.swift */,
+				9FFEA5E82B093915003C6420 /* Snap.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFEA5E72B0900DD003C6420 /* crearUsuarioViewController.swift in Sources */,
+				9FFEA5E92B093915003C6420 /* Snap.swift in Sources */,
 				9FFF16522B0430E900C3B956 /* Usuario.swift in Sources */,
 				9FFF164E2B042C1200C3B956 /* ElegirUsuarioViewController.swift in Sources */,
 				9FFF16412B04178000C3B956 /* SnapsViewController.swift in Sources */,
